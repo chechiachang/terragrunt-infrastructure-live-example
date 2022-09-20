@@ -12,7 +12,7 @@ locals {
   account_id     = local.account_vars.locals.account_id
   default_region = local.common_vars.locals.default_region
   //aws_region     = local.region_vars.["aws_region"]
-  aws_region     = local.region_vars.locals.aws_region
+  aws_region = local.region_vars.locals.aws_region
 }
 
 # -----------------------------------------------------------------------------
