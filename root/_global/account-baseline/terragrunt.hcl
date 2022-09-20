@@ -1,5 +1,6 @@
 terraform {
-  source = "git::https://github.com/chechiachang/terragrunt-infrastructure-modules.git//aws/modules/account-baseline-root?ref=v0.0.1"
+  //source = "/Users/che-chia/workspace/_chechia/terragrunt-infrastructure-modules//aws/modules/account-baseline-root"
+  source = "git::https://github.com/chechiachang/terragrunt-infrastructure-modules.git//aws/modules/account-baseline-root?ref=v0.0.2"
 
   # This module deploys some resources (e.g., AWS Config) across all AWS regions, each of which needs its own provider,
   # which in Terraform means a separate process. To avoid all these processes thrashing the CPU, which leads to network
@@ -52,17 +53,17 @@ inputs = {
   # NOTE: Make sure to include the IAM user you created manually here! We'll import the user into Terraform state in
   # the next step of this guide, allowing you to manage this user as code going forward.
   users = {
-    alice = {
+    Administrator = {
       groups               = ["full-access"]
-      pgp_key              = "keybase:alice"
-      create_login_profile = true
-      create_access_keys   = false
+      pgp_key              = "keybase:administrator"
+      create_login_profile = false # TODO pgp key config
+      create_access_keys   = false # access key exists but not import. disable for now
     },
-    bob = {
+    Accounting = {
       groups               = ["billing"]
-      pgp_key              = "keybase:bob"
-      create_login_profile = true
-      create_access_keys   = false
+      pgp_key              = "keybase:accounting"
+      create_login_profile = false # TODO pgp key config
+      create_access_keys   = false # accounting always use web console, won't use access key
     }
   }
 }
