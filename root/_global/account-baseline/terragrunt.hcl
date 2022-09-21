@@ -1,6 +1,6 @@
 terraform {
   //source = "/Users/che-chia/workspace/_chechia/terragrunt-infrastructure-modules//aws/modules/account-baseline-root"
-  source = "git::https://github.com/chechiachang/terragrunt-infrastructure-modules.git//aws/modules/account-baseline-root?ref=v0.0.3"
+  source = "git::https://github.com/chechiachang/terragrunt-infrastructure-modules.git//aws/modules/account-baseline-root?ref=v0.0.4"
 
   # This module deploys some resources (e.g., AWS Config) across all AWS regions, each of which needs its own provider,
   # which in Terraform means a separate process. To avoid all these processes thrashing the CPU, which leads to network
