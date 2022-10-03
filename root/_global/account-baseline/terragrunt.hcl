@@ -45,6 +45,9 @@ inputs = {
     test = {
       email = "chechiachang999+terraform-test@gmail.com"
     }
+    test-security = {
+      email = "chechiachang999+terraform-test-security@gmail.com"
+    }
   }
 
   # The IAM users to create in this account. Since this is the root account, you should only create IAM users for a
